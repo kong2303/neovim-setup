@@ -14,3 +14,11 @@ vim.opt.shiftwidth = 2
 vim.opt.smartindent = true
 vim.opt.smarttab = true
 vim.opt.softtabstop = 2
+vim.opt.swapfile = false
+
+vim.o.clipboard = "unnamedplus"
+
+if vim.fn.has('mac') or vim.fn.has('macunix') then
+    vim.o.clipboard = vim.o.clipboard .. ",unnamed"
+end
+

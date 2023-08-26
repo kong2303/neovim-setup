@@ -13,10 +13,6 @@ return require('packer').startup(function(use)
     requires = { {'nvim-lua/plenary.nvim'} }
   }
 
-  use {
-    'Tsuzat/NeoSolarized.nvim'
-  }
-
   use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 
   use {
@@ -40,4 +36,28 @@ return require('packer').startup(function(use)
     }
   }
 
+  use "EdenEast/nightfox.nvim"
+  use "svrana/neosolarized.nvim"
+  use "tjdevries/colorbuddy.nvim"
+
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+  }
+
+  use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
+
+  use {
+    'nvim-tree/nvim-tree.lua',
+    requires = {
+      'nvim-tree/nvim-web-devicons', -- optional
+    }
+  }
+
+  use {
+    'windwp/nvim-autopairs',
+    config = function() require('nvim-autopairs').setup {} end
+  }
+
+  use 'nvim-tree/nvim-web-devicons'
 end)
